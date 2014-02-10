@@ -7,7 +7,7 @@ require "stringex"
 ssh_user       = "bje@shell.dds.nl"
 ssh_port       = "22"
 document_root  = "~/public_html/"
-rsync_delete   = true
+rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "rsync"
 
