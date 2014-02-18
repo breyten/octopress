@@ -3,7 +3,7 @@ layout: post
 title: "South data migrations versus schema migrations"
 date: 2014-02-18 16:42:39 +0100
 comments: true
-categories: 
+categories: [django, south]
 ---
 [South](http://south.aeracode.org/) makes a distinction between schema migrations and data migrations. But why is that a good thing?
 
