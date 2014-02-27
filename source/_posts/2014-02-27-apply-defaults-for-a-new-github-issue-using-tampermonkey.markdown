@@ -33,7 +33,7 @@ $(document).ready(function(){
   setTimeout(function() {
     var user = $('#user-links a.name').attr('href').substr(1);
     var assignee_input = $('input[name="issue[assignee]"][value="' + user + '"]');
-  	$('.js-composer-assignee-picker span[role="button"]').click();
+    $('.js-composer-assignee-picker span[role="button"]').click();
     assignee_input.click();
     $('.js-composer-milestone-picker span[role="button"]').click();
     $('.js-composer-milestone-picker').find('*[role="menuitem"]').click();
