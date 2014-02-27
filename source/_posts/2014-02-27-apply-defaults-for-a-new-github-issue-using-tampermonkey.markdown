@@ -3,7 +3,7 @@ layout: post
 title: "Apply defaults for a new Github issue using Tampermonkey"
 date: 2014-02-27 14:48:25 +0100
 comments: true
-categories: 
+categories: [github, tampermonkey, javascript]
 ---
 I've been working a lot with [Github](https://www.github.com)'s issue tracker lately. Not perfect by all means, but it does a decent job. But it could be a lot better, especially when you're creating a new issue.
 
