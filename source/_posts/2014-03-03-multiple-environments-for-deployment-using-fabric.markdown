@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Multiple evironments for deployment using Fabric"
+title: "Multiple environments for deployment using Fabric"
 date: 2014-03-03 12:44:50 +0100
 comments: true
 categories: [fabric, deployment]
