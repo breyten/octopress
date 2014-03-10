@@ -10,6 +10,11 @@ A lot of unit testing involves testing with data. For this purpose you create [t
 
 Now, consider that there is a bug for which you have to add an entity to the test fixtures (because the entity exhibits a property that triggers said bug). You write a unit test for this bug and you look up where the problem is. You change the code and rerun your unit tests until you solved the bug.
 
-You repeat this mentioned process several times -- let's say 100 times for each entity. You end up with test fixtures where the number of instances of each entity that exhibit some form of exoticness in their properties (since they triggered bugs) is greater than those that were normal (to a certain degree).
+You repeat this mentioned process several times -- it's a large project, so let's say 100 times for each entity. You end up with test fixtures where the number of instances of each entity that exhibit some form of exoticness in their properties (since they triggered bugs) is greater than those that were normal (to a certain degree).
 
-At this point your test fixtures do not represent the content of your live database anymore. So what is the value of your unit test now? Do they really say something useful (you know, other than that you know that the bugs were fixed) or is unit testing just moot at this point?
+At this point your test fixtures do not represent the content of your live database anymore. So what do you do? The way I see it you have two options:
+
+1. Remove the bug-specific instances and unit tests. The result is that your test fixtures will again represent your live database. The only downside is that you can't guarantee that these bugs will not occur anymore.
+2. You leave it as it is. The result is that your unit tests are less valuable since your test fixtures do not represent your live database anymore. But at least you're certain that the bugs are gone forever.
+
+So, what's the best choice?
