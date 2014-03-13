@@ -3,7 +3,7 @@ layout: post
 title: "Three easy steps to using counter caches in Rails"
 date: 2014-03-13 17:04:05 +0100
 comments: true
-published: false
+published: true
 categories: [rails]
 ---
 I recently started using counter caches in Rails. Getting them to work was a little bit more difficult than the manual suggests, however.
