@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Tracking the current page in ProPublica's Document Viewer"
+title: "Tracking the current page in The NYT Document Viewer"
 date: 2014-03-14 12:54:38 +0100
 comments: true
 published: false
 categories: [javascript]
 ---
-I'm using ProPublica's Document Viewer in a project and I needed to figure out how to keep track of the current page the user is viewing. It turns out that you can do this, but it required a bit of hacking.
+I'm using [ProPublica](http://www.propublica.org/)'s [Document Viewer](https://github.com/documentcloud/document-viewer) in a project and I needed to figure out how to keep track of the current page the user is viewing. It turns out that you can do this, but it required a bit of hacking.
 
-The Document Viewer is a full-fledged project and it's well structured, as it has models, events and the like. The first thing I did was figuring out if there was an event firing after the entire document was fully loaded (a la jQuery's ready event). It turns out there are two ways to do achieve this kind of functionality. The easiest is to assign a function to the `afterLoad` key in the options you pass to `DV.load`. The other way is to extend the `DV` object with an added function `afterLoad` which is automatically called if it is implemented. 
+The Document Viewer is a full-fledged project and it's well structured, as it has models, events and the likes. The first thing I did was figuring out if there was an event firing after the entire document was fully loaded (a la jQuery's [ready event](http://api.jquery.com/ready/)). It turns out there are two ways to do achieve this kind of functionality. The easiest is to assign a function to the `afterLoad` key in the options you pass to `DV.load`. The other way is to extend the `DV` object with an added function `afterLoad` which is automatically called if it is implemented. 
 
 Here is sample code to register the `afterload` function via the options:
 
@@ -27,7 +27,7 @@ var CURRENT_DOCUMENT = DV.load("https://documentcloud.org/documents/" + dc_slug 
 });
 ```
 
-The code to achieve the same by extending the `DV` object is shorter. You might prefer it -- I prefer the following over defining functions is hashes:
+The code to achieve the same by extending the `DV` object is shorter. You might want to use it -- I prefer the following over defining functions in hashes:
 
 ``` javascript
 DV.afterLoad = function(v) {
@@ -35,15 +35,18 @@ DV.afterLoad = function(v) {
 };
 ```
 
-In order to track the page view we need to register an event handler. Luckily, the document model has an array called `onPageChangeCallbacks`, which is exactly what we need. This is how you register the callback:
+In order to track the page view we need to register an event handler. The document model has an array called `onPageChangeCallbacks`, which is exactly what we need. This is how you register the callback:
 
 ``` javascript
+var currentPage;
+
 DV.afterLoad = function(v) {
   console.log('DV.afterLoad has fired!');
   CURRENT_DOCUMENT.models.document.onPageChangeCallbacks.push(
-    function (){
-      var currentPage = CURRENT_DOCUMENT.models.document.currentPage();
+    function () {
+      currentPage = CURRENT_DOCUMENT.models.document.currentPage();
       console.log('page changed! We are on page ' + currentPage + ' now');
+      // do something here
     }
   );
 };
