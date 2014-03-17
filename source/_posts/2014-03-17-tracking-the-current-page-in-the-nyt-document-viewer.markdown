@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Tracking the current page in The NYT Document Viewer"
-date: 2014-03-14 12:54:38 +0100
+date: 2014-03-17 12:00:38 +0100
 comments: true
-published: false
+published: true
 categories: [javascript]
 ---
 I'm using [ProPublica](http://www.propublica.org/)'s [Document Viewer](https://github.com/documentcloud/document-viewer) in a project and I needed to figure out how to keep track of the current page the user is viewing. It turns out that you can do this, but it required a bit of hacking.
