@@ -7,6 +7,8 @@ categories: [fabric, deployment]
 ---
 I use [Fabric](http://www.fabfile.org/) to deploy my Python projects. While it offers a lot of flexibility, it lacks a concept of different environments (Also referred to as stages) so you need to figure out your own solution.
 
+<!-- more -->
+
 Such a solution boils down to modifying the env variable on the fly. While [this post](http://stackoverflow.com/questions/2326797/how-to-set-target-hosts-in-fabric-file) at StackOverflow points to the right direction, it's a bit more laborious than I like since you explicitly have to set the attributes on the env variable with each option. The solution I came up with looks like this:
 
 ``` python

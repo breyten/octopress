@@ -6,7 +6,7 @@ comments: true
 categories: [django, python]
 ---
 Django's built-in locale middleware is rather [sophisticated](https://docs.djangoproject.com/en/dev/topics/i18n/translation/#how-django-discovers-language-preference). It tries to guess your language according to the following heuristics:
-
+<!-- more -->
 1. A language prefix in the URL
 2. A key in the user's session
 3. A cookie
