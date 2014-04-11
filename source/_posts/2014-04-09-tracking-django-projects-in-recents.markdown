@@ -6,6 +6,7 @@ comments: true
 published: true
 categories: [recents, django]
 ---
+{% img left /images/posts/recents.png 150 %}
 [Recents](http://recents.io/) is a nice little project that shows the programming projects you most recently worked on. An awesome idea, but it currently ships with only limited support for different kinds of development projects. More specifically, it has no support for Django projects yet. Fortunately, you can add it yourself.
 
 <!-- more -->

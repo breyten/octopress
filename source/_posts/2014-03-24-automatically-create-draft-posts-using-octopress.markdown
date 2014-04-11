@@ -6,13 +6,17 @@ comments: true
 published: true
 categories: [octopress]
 ---
-[Octopress](http://octopress.org/) has support for draft posts, which is [covered](http://octopress.org/docs/blogging/) in the documentation. You mark a post as a draft using the `published` directive:
+{% img left /images/posts/draft.png 150 %}
+[Octopress](http://octopress.org/) has support for draft posts, which is [covered](http://octopress.org/docs/blogging/) in the documentation.
+
+<!-- more -->
+
+You mark a post as a draft using the `published` directive:
 
 ``` yaml
 published: false
 ```
 
-<!-- more -->
 
 However, new posts do not include this directive. In order to change this behaviour, you have to edit the `Rakefile`. Scroll to the `:new_post` task. At the end of the task there are a couple of lines which write the YAML front matter into the file. You can add more directives there. I've put the published directive just after the [comments directive](https://github.com/imathis/octopress/blob/master/Rakefile#L116). It looks like this:
 
