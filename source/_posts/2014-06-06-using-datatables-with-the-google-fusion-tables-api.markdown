@@ -3,7 +3,7 @@ layout: post
 title: "Using DataTables with the Google Fusion Tables API"
 date: 2014-06-06 23:48:41 +0200
 comments: true
-published: false
+published: true
 categories: [datatables, fusion tables]
 ---
 {% img left /images/posts/datatables.png 150 %}
