@@ -41,11 +41,9 @@ The first thing you have to do is adding a `comments_count` column to the Post m
 The only problem left is that the counts are off if there are already posts and comments in the database. This is because the counter caches are incremented or decremented when you create or delete an instance of the model. You can reset the counters for the posts in the following manner:
 
 ``` ruby
-Post.each { |post| Post.reset_counters(post.id, :comments) }
+# Post.find_each { |post| Post.reset_counters(post.id, :comments) }
+# The above (an earlier version of this post) is not correct, it should be:
+Post.find_each { |post| Post.reset_counters(post.id, :comments) }
 ```
 
 It's a good idea to make a rake task for it, so you can run it whenever there are problems with your cached counters.
-
-
-
-
